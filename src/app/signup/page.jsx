@@ -1,6 +1,6 @@
 
-export default function page() {
+export default function Signup() {
   return (
-    <div>page</div>
+    <div>Signup</div>
   )
 }
