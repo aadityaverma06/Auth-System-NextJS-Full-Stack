@@ -8,7 +8,7 @@ import toast from "react-hot-toast";
 
 export default function Signup() {
   const [user, setUser] = useState({
-    name: "",
+    username: "",
     email: "",
     password: "",
   });
@@ -20,7 +20,7 @@ export default function Signup() {
     if (
       user.email.length > 0 &&
       user.password.length > 0 &&
-      user.name.length > 0
+      user.username.length > 0
     ) {
       setButtonDisabled(false);
     } else {
@@ -42,7 +42,7 @@ export default function Signup() {
       console.log(error)
     } finally {
       setLoading(false);
-      user.name = "";
+      user.username = "";
       user.email = "";
       user.password = "";
     }
@@ -58,8 +58,8 @@ export default function Signup() {
         <input
           className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 bg-white placeholder-gray-400 text-black"
           type="text"
-          value={user.name}
-          onChange={(e) => setUser({ ...user, name: e.target.value })}
+          value={user.username}
+          onChange={(e) => setUser({ ...user, username: e.target.value })}
           placeholder="username"
         />
         <label htmlFor="email">Email</label>

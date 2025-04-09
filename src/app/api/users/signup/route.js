@@ -8,7 +8,8 @@ connectDB();
 export async function POST(request) {
   try {
     const body = await request.json();
-    const { name, email, password } = body;
+    const { username, email, password } = body;
+
     const user = await User.findOne({ email });
     if (user) {
       return NextResponse.json({ error: "User already exists", status: 400 });
@@ -16,9 +17,8 @@ export async function POST(request) {
 
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
-
     const newUser = await User.create({
-      name,
+      username,
       email,
       password: hashedPassword,
     });

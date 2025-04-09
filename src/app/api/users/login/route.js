@@ -9,8 +9,9 @@ connectDB();
 export async function POST(request) {
   try {
     const body = await request.json();
-    const { email, password } = body;
-    const user = await User.findOne({ email });
+    const { username, password } = body;
+    const user = await User.findOne({ username });
+    console.log(user)
     if (!user) {
       return NextResponse.json({ error: "User does not exist", status: 400 });
     }
@@ -24,7 +25,6 @@ export async function POST(request) {
     const tokenData = {
       id: user._id,
       username: user.username,
-      email: user.email,
     };
 
     const token = await jwt.sign(tokenData, process.env.TOKEN_SECRET, {

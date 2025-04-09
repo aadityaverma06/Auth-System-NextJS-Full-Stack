@@ -8,7 +8,7 @@ import toast from "react-hot-toast";
 
 export default function Login() {
   const [user, setUser] = useState({
-    email: "",
+    username: "",
     password: "",
   });
 
@@ -17,7 +17,7 @@ export default function Login() {
   const router = useRouter();
 
   useEffect(() => {
-    if (user.email.length > 0 && user.password.length > 0) {
+    if (user.username.length > 0 && user.password.length > 0) {
       setButtonDisabled(false);
     } else {
       setButtonDisabled(true);
@@ -33,12 +33,12 @@ export default function Login() {
         return;
       }
       toast.success(postData.data.message);
-      router.push("/profile");
+      router.push(`/profile/${user.username}`);
     } catch (error) {
       console.log(error);
     } finally {
       setLoading(false);
-      user.email = "";
+      user.username = "";
       user.password = "";
     }
   };
@@ -49,13 +49,13 @@ export default function Login() {
         {loading ? "PROCESSING.." : "LOGIN"}
       </h1>
       <div className="mt-12 flex flex-col items-center justify-center py-2 text-2xl gap-3">
-        <label htmlFor="email">Email</label>
+        <label htmlFor="username">Username</label>
         <input
           className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 bg-white placeholder-gray-400 text-black"
           type="email"
-          value={user.email}
-          onChange={(e) => setUser({ ...user, email: e.target.value })}
-          placeholder="email"
+          value={user.username}
+          onChange={(e) => setUser({ ...user, username: e.target.value })}
+          placeholder="username"
         />
         <label htmlFor="password">Password</label>
         <input
