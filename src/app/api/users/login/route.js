@@ -11,7 +11,6 @@ export async function POST(request) {
     const body = await request.json();
     const { username, password } = body;
     const user = await User.findOne({ username });
-    console.log(user)
     if (!user) {
       return NextResponse.json({ error: "User does not exist", status: 400 });
     }

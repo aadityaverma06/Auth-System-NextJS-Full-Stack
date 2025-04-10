@@ -12,9 +12,7 @@ export function middleware(request) {
   } else {
     decodedToken = jwtDecode(token);
   }
-  console.log(decodedToken)
   if (isPublicPath && token) {
-    console.log(request.nextUrl);
     return NextResponse.redirect(
       `${request.nextUrl.origin}/profile/${decodedToken.username}`
     );
@@ -25,5 +23,5 @@ export function middleware(request) {
 }
 
 export const config = {
-  matcher: ["/login", "/signup", "/profile"],
+  matcher: ["/login", "/signup", "/profile", "/profile/:path*"],
 };
