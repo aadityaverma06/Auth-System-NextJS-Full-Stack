@@ -15,6 +15,10 @@ export async function POST(request) {
       return NextResponse.json({ error: "User does not exist", status: 400 });
     }
 
+    if (!user.isVerified) {
+      return NextResponse.json({ error: "Please verify your email", status: 400 });
+    }
+
     const validPassword = await bcrypt.compare(password, user.password);
 
     if (!validPassword) {
