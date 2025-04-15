@@ -37,6 +37,7 @@ export default function Signup() {
         return
       }
       toast.success(postData.data.message);
+      toast.success("Please verify your email before logging in");
       router.push("/login");
     } catch (error) {
       console.log(error)

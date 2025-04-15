@@ -43,6 +43,13 @@ export default function Login() {
     }
   };
 
+  const onForgotPassword = async () => {
+    try {
+      router.push("/verifyuser");
+    } catch (error) {
+      console.log(error);
+    }
+  }
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2 text-3xl">
       <h1 className="text-5xl underline underline-offset-8">
@@ -79,6 +86,13 @@ export default function Login() {
         >
           Visit Signup page
         </Link>
+        <button
+          type="button"
+          className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg px-3 py-1.5 mt-14 mb-4 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 cursor-pointer w-full disabled:cursor-not-allowed disabled:opacity-50"
+          onClick={onForgotPassword}
+        >
+          Forgot Password
+        </button>
       </div>
     </div>
   );

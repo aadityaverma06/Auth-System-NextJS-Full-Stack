@@ -23,7 +23,10 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Toaster position="top-right" toastOptions={{style:{fontSize:"20px"}}} />
+        <Toaster
+          position="top-right"
+          toastOptions={{ duration: 5000, style: { fontSize: "20px" } }}
+        />
         {children}
       </body>
     </html>
