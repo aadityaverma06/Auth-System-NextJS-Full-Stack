@@ -30,5 +30,5 @@ const userSchema = new mongoose.Schema({
 });
 
 export const User =
-  mongoose.models.usersFullStackAuth ||
-  mongoose.model("usersFullStackAuth", userSchema);
+  mongoose.models.users||
+  mongoose.model("users", userSchema);
