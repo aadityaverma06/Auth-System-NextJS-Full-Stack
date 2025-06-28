@@ -12,7 +12,7 @@ export async function POST(request) {
       forgotPasswordToken: token,
       forgotPasswordTokenExpiry: { $gt: Date.now() },
     });
-    console.log(token);
+    console.log(user.forgotPasswordTokenExpiry);
 
     if (!user) {
       return NextResponse.json({ error: "User does not exist", status: 400 });
