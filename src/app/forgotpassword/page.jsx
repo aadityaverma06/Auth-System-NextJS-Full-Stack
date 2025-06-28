@@ -18,6 +18,7 @@ export default function forgotPassword() {
       if (token.length == 0) {
         return toast.error("Invalid token");
       }
+      console.log(token, oldPassword, newPassword);
       const response = await axios.post("/api/users/forgotpassword", {
         token,
         oldPassword,
