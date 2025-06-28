@@ -40,6 +40,7 @@ export default function forgotPassword() {
   useEffect(() => {
     const urlToken = window.location.search.split("=")[1];
     setToken(urlToken || "");
+    console.log(urlToken);
   }, []);
 
   return (
