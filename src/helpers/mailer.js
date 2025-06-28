@@ -31,8 +31,12 @@ const sendEmail = async ({ email, emailType, userId }) => {
         emailType === "VERIFY" ? "Verify your email" : "Reset your password",
       html: `<p>Click <a href=${
         emailType === "VERIFY"
-          ? `${process.env.DOMAIN}/verifyemail?token=${hashedToken}`
-          : `${process.env.DOMAIN}/forgotpassword?token=${hashedToken}`
+          ? `${process.env.DOMAIN}/verifyemail?token=${encodeURIComponent(
+              hashedToken
+            )}`
+          : `${process.env.DOMAIN}/forgotpassword?token=${encodeURIComponent(
+              hashedToken
+            )}`
       }>here</a> to ${
         emailType === "VERIFY" ? "verify your email" : "reset your password"
       }</p>`,

@@ -9,10 +9,9 @@ export async function POST(request) {
   try {
     const { token, oldPassword, newPassword } = await request.json();
     const user = await User.findOne({
-      forgotPasswordToken: token,
+      forgotPasswordToken: decodeURIComponent(token),
+      forgotPasswordTokenExpiry: { $gt: Date.now() },
     });
-
-    console.log(token)
 
     if (!user) {
       return NextResponse.json({ error: "User does not exist", status: 400 });
