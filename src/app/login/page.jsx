@@ -1,6 +1,7 @@
 "use client";
 
 import axios from "axios";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState, useEffect } from "react";
@@ -49,12 +50,25 @@ export default function Login() {
     } catch (error) {
       console.log(error);
     }
-  }
+  };
+
+  const onHome = () => {
+    try {
+      router.push("/");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2 text-3xl">
-      <h1 className="text-5xl underline underline-offset-8">
-        {loading ? "PROCESSING.." : "LOGIN"}
-      </h1>
+      <div className="flex flex-col gap-[32px] row-start-2 items-center justify-center">
+        <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white md:text-4xl lg:text-5xl">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r to-pink-500 from-purple-700">
+            {loading ? "Processing.." : "Login"}
+          </span>
+        </h1>
+      </div>
       <div className="mt-12 flex flex-col items-center justify-center py-2 text-2xl gap-3">
         <label htmlFor="username">Username</label>
         <input
@@ -74,24 +88,59 @@ export default function Login() {
         />
         <button
           type="button"
-          className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg px-3 py-1.5 mt-8 mb-4 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 cursor-pointer w-full disabled:cursor-not-allowed disabled:opacity-50"
+          className=" flex justify-center items-center gap-2 text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg px-3 py-1.5 mt-2 mb-16 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800 cursor-pointer w-full disabled:cursor-not-allowed disabled:opacity-50"
           onClick={onLogin}
           disabled={buttonDisabled}
         >
+          <Image
+            className="dark:invert mr-2"
+            src="/login.svg"
+            alt="Login logomark"
+            width={20}
+            height={20}
+          />
           Login
         </button>
         <Link
-          className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg px-3 py-1.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 cursor-pointer w-full text-center"
+          className="flex justify-center bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-medium rounded-lg px-3 py-1.5 mb-4 dark:bg-pink-600 dark:hover:bg-pink-700 focus:outline-none dark:focus:ring-pink-800 cursor-pointer w-full text-center"
           href="/signup"
         >
+          <Image
+            className="dark:invert mr-2"
+            src="/signup.svg"
+            alt="Login logomark"
+            width={20}
+            height={20}
+          />
           Visit Signup page
         </Link>
         <button
           type="button"
-          className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg px-3 py-1.5 mt-14 mb-4 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 cursor-pointer w-full disabled:cursor-not-allowed disabled:opacity-50"
+          className="flex justify-center bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-medium rounded-lg px-3 py-1.5 mb-4 dark:bg-pink-600 dark:hover:bg-pink-700 focus:outline-none dark:focus:ring-pink-800 cursor-pointer w-full disabled:cursor-not-allowed disabled:opacity-50"
           onClick={onForgotPassword}
         >
+          <Image
+            className="dark:invert mr-2"
+            src="/forgotpassword.svg"
+            alt="Login logomark"
+            width={20}
+            height={20}
+          />
           Forgot Password
+        </button>
+        <button
+          type="button"
+          className="flex justify-center bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-medium rounded-lg px-3 py-1.5 mb-4 dark:bg-pink-600 dark:hover:bg-pink-700 focus:outline-none dark:focus:ring-pink-800 cursor-pointer w-full disabled:cursor-not-allowed disabled:opacity-50"
+          onClick={onHome}
+        >
+          <Image
+            className="dark:invert mr-2"
+            src="/home.svg"
+            alt="Login logomark"
+            width={20}
+            height={20}
+          />
+          Visit Home Page
         </button>
       </div>
     </div>
