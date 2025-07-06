@@ -17,7 +17,7 @@ A Full Stack App that works as an Auth System.
 - React.js
 - Next.js
 - Tailwind CSS
-- Nodemailer and Mailtrap for sending emails.
+- Nodemailer and Mailtrap for sending verification and reset password emails.
 - MongoDB for storing user data.
 - JWT for authentication.
 - bcrypt for password hashing.
