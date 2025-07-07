@@ -40,8 +40,13 @@ export default function verifyEmailPage() {
   return (
     <div className="flex flex-col items-center justify-between min-h-screen p-12">
       {verified && (
-        <div>
-          <h2 className="text-3xl">Email Verified ✅</h2>
+        <div className="flex flex-col gap-[32px] row-start-2 items-center justify-center mb-16">
+          <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white md:text-4xl lg:text-5xl">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r to-pink-500 from-purple-700">
+              Email Verified
+            </span>
+            <span className="ml-2 text-4xl">✅</span>
+          </h1>
         </div>
       )}
       {error && (
