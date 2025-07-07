@@ -22,6 +22,7 @@ A Full Stack App that works as an Auth System.
 - JWT for authentication.
 - bcrypt for password hashing.
 - Axios for making API requests.
+- Toaster for notifications.
 
 ## Installation / Access
 ### 📦 On Local Machine

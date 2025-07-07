@@ -88,12 +88,12 @@ export default function Login() {
         />
         <button
           type="button"
-          className=" flex justify-center items-center gap-2 text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg px-3 py-1.5 mt-2 mb-16 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800 cursor-pointer w-full disabled:cursor-not-allowed disabled:opacity-50"
+          className=" flex justify-center items-center gap-2 text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg px-3 py-1.5 mt-2 mb-16 dark:bg-purple-700 dark:hover:bg-purple-800 focus:outline-none dark:focus:ring-purple-900 cursor-pointer w-full disabled:cursor-not-allowed disabled:opacity-50"
           onClick={onLogin}
           disabled={buttonDisabled}
         >
           <Image
-            className="dark:invert mr-2"
+            className="invert mr-2"
             src="/login.svg"
             alt="Login logomark"
             width={20}
@@ -102,11 +102,11 @@ export default function Login() {
           Login
         </button>
         <Link
-          className="flex justify-center bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-medium rounded-lg px-3 py-1.5 mb-4 dark:bg-pink-600 dark:hover:bg-pink-700 focus:outline-none dark:focus:ring-pink-800 cursor-pointer w-full text-center"
+          className=" text-white flex justify-center bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:ring-pink-300 font-medium rounded-lg px-3 py-1.5 mb-4 dark:bg-pink-700 dark:hover:bg-pink-800 focus:outline-none dark:focus:ring-pink-900 cursor-pointer w-full text-center"
           href="/signup"
         >
           <Image
-            className="dark:invert mr-2"
+            className="invert mr-2"
             src="/signup.svg"
             alt="Login logomark"
             width={20}
@@ -116,11 +116,11 @@ export default function Login() {
         </Link>
         <button
           type="button"
-          className="flex justify-center bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-medium rounded-lg px-3 py-1.5 mb-4 dark:bg-pink-600 dark:hover:bg-pink-700 focus:outline-none dark:focus:ring-pink-800 cursor-pointer w-full disabled:cursor-not-allowed disabled:opacity-50"
+          className="text-white flex justify-center bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:ring-pink-300 font-medium rounded-lg px-3 py-1.5 mb-4 dark:bg-pink-700 dark:hover:bg-pink-800 focus:outline-none dark:focus:ring-pink-900 cursor-pointer w-full disabled:cursor-not-allowed disabled:opacity-50"
           onClick={onForgotPassword}
         >
           <Image
-            className="dark:invert mr-2"
+            className="invert mr-2"
             src="/forgotpassword.svg"
             alt="Login logomark"
             width={20}
@@ -130,11 +130,11 @@ export default function Login() {
         </button>
         <button
           type="button"
-          className="flex justify-center bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-medium rounded-lg px-3 py-1.5 mb-4 dark:bg-pink-600 dark:hover:bg-pink-700 focus:outline-none dark:focus:ring-pink-800 cursor-pointer w-full disabled:cursor-not-allowed disabled:opacity-50"
+          className="text-white flex justify-center bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:ring-pink-300 font-medium rounded-lg px-3 py-1.5 mb-4 dark:bg-pink-700 dark:hover:bg-pink-800 focus:outline-none dark:focus:ring-pink-900 cursor-pointer w-full disabled:cursor-not-allowed disabled:opacity-50"
           onClick={onHome}
         >
           <Image
-            className="dark:invert mr-2"
+            className="invert mr-2"
             src="/home.svg"
             alt="Login logomark"
             width={20}
