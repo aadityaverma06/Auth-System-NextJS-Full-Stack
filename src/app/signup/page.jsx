@@ -32,11 +32,13 @@ export default function Signup() {
   const onSignup = async () => {
     try {
       setLoading(true);
+
       const postData = await axios.post("/api/users/signup", user);
       if (postData.data.error) {
         toast.error(postData.data.error);
         return;
       }
+
       toast.success(postData.data.message);
       toast.success("Please verify your email before logging in");
       router.push("/login");

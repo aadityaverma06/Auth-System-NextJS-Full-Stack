@@ -10,8 +10,17 @@ export async function POST(request) {
   try {
     const body = await request.json();
     const { username, email, password } = body;
+    
+    const isEmailValid = (email) => {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    };
 
-    const user = await User.findOne({ email });
+    if (!isEmailValid(email)) {
+      return NextResponse.json({ error: "Invalid email", status: 400 });
+    }
+
+    const user = await User.findOne({ $or: [{ username }, { email }] });
     if (user) {
       return NextResponse.json({ error: "User already exists", status: 400 });
     }
@@ -24,9 +33,10 @@ export async function POST(request) {
       password: hashedPassword,
     });
 
-    const savedUser = await newUser.save();
+    const savedUser = await User.findById(newUser._id).select("-password -__v -verifyToken -verifyTokenExpiry");
     
-    await sendEmail({ email, emailType: "VERIFY", userId: savedUser._id });
+    const sendEmailResponse = await sendEmail({ email, emailType: "VERIFY", userId: savedUser._id });
+
     return NextResponse.json({
       message: "User created successfully",
       status: 201,
@@ -36,4 +46,3 @@ export async function POST(request) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
-
