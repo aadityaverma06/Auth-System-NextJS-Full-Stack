@@ -1,4 +1,10 @@
 "use client";
+import {
+  IconUserPlus,
+  IconLogin2,
+  IconKey,
+  IconHome,
+} from "@tabler/icons-react";
 
 import axios from "axios";
 import Image from "next/image";
@@ -92,55 +98,31 @@ export default function Login() {
           onClick={onLogin}
           disabled={buttonDisabled}
         >
-          <Image
-            className="invert mr-2"
-            src="/login.svg"
-            alt="Login logomark"
-            width={20}
-            height={20}
-          />
-          Login
+          <IconLogin2 size={25} />
+          Login Now
         </button>
         <Link
-          className=" text-white flex justify-center bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:ring-pink-300 font-medium rounded-lg px-3 py-1.5 mb-4 dark:bg-pink-700 dark:hover:bg-pink-800 focus:outline-none dark:focus:ring-pink-900 cursor-pointer w-full text-center"
+          className=" text-white flex gap-2 justify-center items-center bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:ring-pink-300 font-medium rounded-lg px-3 py-1.5 mb-4 dark:bg-pink-700 dark:hover:bg-pink-800 focus:outline-none dark:focus:ring-pink-900 cursor-pointer w-full text-center"
           href="/signup"
         >
-          <Image
-            className="invert mr-2"
-            src="/signup.svg"
-            alt="Login logomark"
-            width={20}
-            height={20}
-          />
-          Visit Signup page
+          <IconUserPlus size={25} />
+          Signup
         </Link>
         <button
           type="button"
-          className="text-white flex justify-center bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:ring-pink-300 font-medium rounded-lg px-3 py-1.5 mb-4 dark:bg-pink-700 dark:hover:bg-pink-800 focus:outline-none dark:focus:ring-pink-900 cursor-pointer w-full disabled:cursor-not-allowed disabled:opacity-50"
+          className="text-white flex gap-2 justify-center items-center bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:ring-pink-300 font-medium rounded-lg px-3 py-1.5 mb-4 dark:bg-pink-700 dark:hover:bg-pink-800 focus:outline-none dark:focus:ring-pink-900 cursor-pointer w-full disabled:cursor-not-allowed disabled:opacity-50"
           onClick={onForgotPassword}
         >
-          <Image
-            className="invert mr-2"
-            src="/forgotpassword.svg"
-            alt="Login logomark"
-            width={20}
-            height={20}
-          />
+          <IconKey size={25} />
           Forgot Password
         </button>
         <button
           type="button"
-          className="text-white flex justify-center bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:ring-pink-300 font-medium rounded-lg px-3 py-1.5 mb-4 dark:bg-pink-700 dark:hover:bg-pink-800 focus:outline-none dark:focus:ring-pink-900 cursor-pointer w-full disabled:cursor-not-allowed disabled:opacity-50"
+          className="gap-2 text-white flex justify-center items-center bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:ring-pink-300 font-medium rounded-lg px-3 py-1.5 mb-4 dark:bg-pink-700 dark:hover:bg-pink-800 focus:outline-none dark:focus:ring-pink-900 cursor-pointer w-full disabled:cursor-not-allowed disabled:opacity-50"
           onClick={onHome}
         >
-          <Image
-            className="invert mr-2"
-            src="/home.svg"
-            alt="Login logomark"
-            width={20}
-            height={20}
-          />
-          Visit Home Page
+          <IconHome size={25} />
+          Home
         </button>
       </div>
     </div>

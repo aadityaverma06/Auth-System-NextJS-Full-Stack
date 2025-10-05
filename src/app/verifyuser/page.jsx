@@ -6,6 +6,7 @@ import React, { useState, useEffect } from "react";
 import toast from "react-hot-toast";
 import axios from "axios";
 import Image from "next/image";
+import { IconMailCheck } from "@tabler/icons-react";
 export default function verifyUser() {
   const [email, setEmail] = useState("");
   const [processing, setProcessing] = useState(false);
@@ -31,10 +32,10 @@ export default function verifyUser() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-between min-h-screen p-12">
+    <div className="flex flex-col items-center justify-between min-h-screen py-12 px-2">
       <div className="mt-12 flex flex-col items-center justify-center py-2 text-2xl gap-3">
         <div className="flex flex-col gap-[32px] row-start-2 items-center justify-center mb-16">
-          <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white md:text-4xl lg:text-5xl">
+          <h1 className="text-center text-3xl font-extrabold text-gray-900 dark:text-white md:text-4xl lg:text-5xl">
             <span className="text-transparent bg-clip-text bg-gradient-to-r to-pink-500 from-purple-700">
               {processing
                 ? "Processing.."
@@ -54,16 +55,10 @@ export default function verifyUser() {
         />
       </div>
       <button
-        className="text-2xl flex justify-center text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg px-3 py-1.5 mb-4 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800 cursor-pointer w-max disabled:cursor-not-allowed disabled:opacity-50"
+        className="text-2xl flex gap-2 items-center justify-center text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg px-3 py-1.5 mb-4 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800 cursor-pointer w-max disabled:cursor-not-allowed disabled:opacity-50"
         onClick={onVerifyUser}
       >
-        <Image
-          className="invert mr-2"
-          src="/verifyemail.svg"
-          alt="Login logomark"
-          width={25}
-          height={25}
-        />
+       <IconMailCheck size={25}/>
         Verify
       </button>
     </div>

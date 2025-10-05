@@ -4,7 +4,6 @@ import bcrypt from "bcrypt";
 
 const sendEmail = async ({ email, emailType, userId }) => {
   try {
- 
     const hashedToken = await bcrypt.hash(userId.toString(), 10);
     emailType === "VERIFY"
       ? await User.findByIdAndUpdate(userId, {
@@ -17,11 +16,11 @@ const sendEmail = async ({ email, emailType, userId }) => {
         });
 
     var transport = nodemailer.createTransport({
-      host: "sandbox.smtp.mailtrap.io",
-      port: 2525,
+      host: process.env.MAILTRAP_HOST,
+      port: 587,
       auth: {
-        user: process.env.NODEMAILER_USER,
-        pass: process.env.NODEMAILER_PASSWORD,
+        user: process.env.MAILTRAP_USERNAME,
+        pass: process.env.MAILTRAP_PASSWORD,
       },
     });
 
@@ -46,7 +45,7 @@ const sendEmail = async ({ email, emailType, userId }) => {
     const mailResponse = await transport.sendMail(mailOptions);
     return mailResponse;
   } catch (error) {
-    throw new Error(error);
+    return { error: error.message };
   }
 };
 

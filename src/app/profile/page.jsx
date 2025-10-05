@@ -1,5 +1,8 @@
 "use client";
-
+import {
+  IconLogout2,
+  IconUser
+} from "@tabler/icons-react";
 import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
@@ -91,32 +94,20 @@ function Profile() {
       <div className="flex flex-col items-center gap-6 ">
         <button
           type="button"
-          className="flex justify-center text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg px-3 py-1.5 dark:bg-purple-700 dark:hover:bg-purple-800 focus:outline-none dark:focus:ring-purple-900 cursor-pointer w-full text-2xl"
+          className="flex gap-2 items-center justify-center text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg px-3 py-1.5 dark:bg-purple-700 dark:hover:bg-purple-800 focus:outline-none dark:focus:ring-purple-900 cursor-pointer w-full text-2xl"
           onClick={onLogout}
         >
-          <Image
-            className="invert mr-2"
-            src="/logout.svg"
-            alt="Profile Logo"
-            width={20}
-            height={20}
-          />
+          <IconLogout2 size={25} />
           Logout
         </button>
         <button
           type="button"
-          className="flex justify-center text-white bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:ring-pink-300 font-medium rounded-lg px-3 py-1.5 pink:bg-blue-600 dark:hover:bg-pink-700 focus:outline-none dark:focus:ring-pink-800 cursor-pointer w-max text-2xl"
+          className="flex gap-2 items-center justify-center text-white bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:ring-pink-300 font-medium rounded-lg px-3 py-1.5 pink:bg-blue-600 dark:hover:bg-pink-700 focus:outline-none dark:focus:ring-pink-800 cursor-pointer w-max text-2xl"
           onClick={
             fetchUserData === "Get User Data" ? getUserData : goToProfilePage
           }
         >
-          <Image
-            className="invert mr-2"
-            src="/profilepage.svg"
-            alt="Profile Logo"
-            width={20}
-            height={20}
-          />
+          <IconUser size={25} />
           {fetchUserData}
         </button>
       </div>
