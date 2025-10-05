@@ -2,7 +2,6 @@
 
 import { IconLockOpen, IconLogin2 } from "@tabler/icons-react";
 import axios from "axios";
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState, useEffect } from "react";

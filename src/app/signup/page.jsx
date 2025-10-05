@@ -1,7 +1,6 @@
 "use client";
 
 import axios from "axios";
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState, useEffect } from "react";

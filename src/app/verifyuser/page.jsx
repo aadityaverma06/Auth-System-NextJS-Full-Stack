@@ -1,11 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import { useRouter } from "next/navigation";
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import toast from "react-hot-toast";
 import axios from "axios";
-import Image from "next/image";
 import { IconMailCheck } from "@tabler/icons-react";
 export default function verifyUser() {
   const [email, setEmail] = useState("");
