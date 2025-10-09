@@ -9,7 +9,7 @@ export default function Home() {
         <div className="flex flex-col gap-[32px] row-start-2 items-center justify-center sm:mb-10 pl-4">
           <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl text-left mb-8 sm:mb-0">
             <span className="text-transparent bg-clip-text bg-gradient-to-r to-pink-500 from-purple-700">
-              Welcome to StackFlow QnA System
+              Welcome to Auth System
             </span>
           </h1>
         </div>
